@@ -11,21 +11,22 @@ public class BookingService {
 
     public BookingService(){
 
-        trainList.add(new Train(101,"Rajdhani Express","Delhi","Lucknow",100));
-        trainList.add(new Train(102,"Shatabdi Express","Delhi","Mumbai",60));
-        trainList.add(new Train(103,"Durunto Express","Agra","Delhi",70));
-        trainList.add(new Train(104,"vande Bharat Express","Delhi","Goa",100));
-        trainList.add(new Train(105,"Intercity","Kolkata","Manali",90));
-        trainList.add(new Train(106,"Tejas Express","Delhi","Bengaluru",80));
+        trainList.add(new Train(101,"Rajdhani Express","Delhi","Lucknow",100,"07-09-2025"));
+        trainList.add(new Train(102,"Shatabdi Express","Delhi","Mumbai",60,"07-09-2025"));
+        trainList.add(new Train(103,"Durunto Express","Agra","Delhi",70,"08-09-2025"));
+        trainList.add(new Train(104,"vande Bharat Express","Delhi","Goa",100,"09-09-2025"));
+        trainList.add(new Train(105,"Intercity","Kolkata","Manali",90,"08-09-2025"));
+        trainList.add(new Train(106,"Tejas Express","Delhi","Bengaluru",80,"10-09-2025"));
 
     }
 //HomeWork add date to for filteration
-    public List<Train> searchTrain(String source ,String destination){
+    public List<Train> searchTrain(String source ,String destination,String date){
 
         List<Train> res=new ArrayList<>();
 
         for(Train train:trainList){
-            if(train.getSource().equalsIgnoreCase(source) && train.getDestination().equalsIgnoreCase(destination)){
+            if(train.getSource().equalsIgnoreCase(source) && train.getDestination().equalsIgnoreCase(destination )
+            && train.getDate().equalsIgnoreCase(date)){
                 res.add(train);
             }
 

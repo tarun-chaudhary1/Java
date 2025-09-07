@@ -14,9 +14,10 @@ public class UserService {
             System.out.println("UserName already taken , use another Username");
             return false;
         }
-        User user=new User(userName,password,contact,fullName);
+        User user=new User(userName,fullName,contact,password);
         userMap.put(userName,user);
         System.out.println("Registration Successfull");
+
         return true;
     }
 
